@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CsvParser {
+
+    private static final String SEPARATOR = ",";
+
     public Table parse(String csv) {
         requireNonEmptyInput(csv);
 
@@ -18,15 +21,15 @@ public class CsvParser {
     }
 
     private String[][] rows(String[] lines, int columns) {
-        List<String[]> result = parseRows(data(lines), columns);
-        return result.toArray(new String[][]{});
+        return parseRows(data(lines), columns)
+                .toArray(new String[][]{});
     }
 
-    private String[] data(String[] lines) {
+    private static String[] data(String[] lines) {
         return Arrays.copyOfRange(lines, 1, lines.length);
     }
 
-    private List<String[]> parseRows(String[] values, int columns) {
+    private static List<String[]> parseRows(String[] values, int columns) {
         List<String[]> result = new ArrayList<>();
         for (String s : values) {
             String[] row = s.split(",");
@@ -42,18 +45,18 @@ public class CsvParser {
         }
     }
 
-    private String[] lines(String csv) {
+    private static String[] lines(String csv) {
         return csv.split("\n");
     }
 
-    private void requireNonEmptyInput(String csv) {
+    private static void requireNonEmptyInput(String csv) {
         if (csv.isEmpty()) {
             throw new IllegalArgumentException();
         }
     }
 
-    private String[] columns(String[] csv) {
-        return csv[0].split(",");
+    private static String[] columns(String[] csv) {
+        return csv[0].split(SEPARATOR);
     }
 
     public class Table {
