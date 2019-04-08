@@ -26,7 +26,7 @@ Your job is to write a Parser for the CSV format.
 
 ## Suggestion for the solution
 
-A string containing a CSV-File can be parsed through a single method `CsvParser.Table parse(String CSV)` in the `CsvParser` class.
+A string containing a CSV-File can be parsed through a single method `CsvParser.Table parse(String csv)` in the `CsvParser` class.
 
 The result of the parsing is a self-created inner class `CsvParser.Table` which should have the following public interface:
 
