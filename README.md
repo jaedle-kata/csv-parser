@@ -6,7 +6,7 @@
 
 Sample CSV File with a first line defining the column names and the rest is the payload of the table
 
-```
+```csv
 Name,Age,Gender
 Kristy,30,female
 Jim,23,male
