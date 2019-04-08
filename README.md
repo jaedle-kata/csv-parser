@@ -57,6 +57,6 @@ String getValue(String column, int row) // returns the value for the column name
 5. Make the data of the first data line accessible through `String getValue(String column, int row)` for 1 column
 6. Read multiple colums for single data line
 7. Handle multiple data lines and read them through `getValue()`
-8. Throw an `IllegalArgumentException` if someone access an illegal row index through `getValue()`
+8. Throw an `IllegalArgumentException` if someone access an illegal row index through `getValue()` (upper and lower bound)
 9. Throw an `IllegalArgumentException` if someone access an illegal column name through `getValue()`
 10. If any data line has more or less fields than the heading throw a `IllegalArgumentException` while parsing.
